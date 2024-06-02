@@ -1,0 +1,95 @@
+#button-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+#button-container > #buttons1-2 {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    position: relative;
+}
+
+#button-container > #buttons1-2 > button:first-child {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#button-container > #buttons3 {
+    width: 50%;
+    position: relative;
+}
+
+#button-container > #buttons3 > button {
+    position: absolute;
+    right: 0px;
+}
+
+td > svg {
+    height: 30px;
+    margin: 5px;
+    margin-top: 10px;
+}
+
+.text-box > p {
+    margin-bottom: 20px;
+}
+
+.double-indicator {
+    position: absolute;
+    width: calc(100% - 30px);
+    top: 90px;
+    left: 40px;
+}
+
+.double-indicator td {
+    border: 1px solid rgba(255, 255, 255, 0);
+    width: 100px;
+}
+
+.double-indicator td > b {
+    height: 34px;
+    margin: 5px;
+    margin-top: 10px;
+}
+.double-indicator td > div {
+    height: 34px;
+    margin: 5px;
+    margin-top: 10px;
+    opacity: 0;
+}
+
+@media (min-width: 1080px){
+    .double-indicator {
+        top: 102px;
+    }
+}
+
+.resulte {
+    margin-top: 10px;
+}
+
+#resulte_grid td {
+    border: none;
+}
+
+.button_double {
+    padding: 0px;
+    background-color: unset;
+    min-width: unset;
+}
+
+.button_double:hover {
+    background-color: gray;
+    height: 30px;
+    border-radius: 25rem;
+}
+
+.button_double > svg {
+    fill:"#dfac20";
+}
+
+.invis {
+    opacity: 0;
+}

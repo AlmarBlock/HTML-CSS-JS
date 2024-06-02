@@ -1,0 +1,47 @@
+h1, h3{
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    text-align: justify;
+}
+
+caption {
+    padding-bottom: 10px;
+}
+
+.qullen-container {
+    position: relative;
+    margin-top: 3px;
+    padding-bottom: 20px;
+}
+
+.qullen-container > div, .qullen-container > a{
+    position: absolute;
+    right: 0px;
+}
+
+ul {
+    margin-left: 20px;
+    text-align: justify;
+}
+@media (min-width: 1080px){
+    ul {
+        margin-left: 25px;
+        text-align: justify;
+    }
+    h1 {
+        font-size: 44px;
+    }
+    p, li {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,16 @@
+:root {
+    --hex-background: #7a7a7a;
+    --hex-text: #cccccc;
+    --hex-text-dark: #a8a8a8;
+    --hex-text-darker: #5d5d5d;
+    --hex-background-text-box: #1f1f1f;
+
+    --incorrect: #ff5c5c;
+    --correct: #5cb768;
+    --partially-correct: #ffef5d;
+    --out: #383838;
+    --incorrect-hover: #a93f3f;
+    --correct-hover: #397341;
+    --partially-correct-hover: #a49a3d;
+    --out-hover: #606060;
+}

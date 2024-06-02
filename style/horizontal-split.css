@@ -1,0 +1,31 @@
+.horizontal-split {
+    display: inline-flex;
+    margin: 0;
+}
+
+.horizontal-split > .fist{
+    margin-right: 10px;
+    width: 50%;
+}
+
+.horizontal-split > .second{
+    margin-left: 10px;
+    width: 50%;
+}
+
+@media (max-width: 800px){
+    .horizontal-split {
+        display:block;
+        margin: 0;
+    }
+    
+    .horizontal-split > .fist{
+        margin: 20px;
+        width: calc(100% - 70px);
+    }
+    
+    .horizontal-split > .second{
+        margin: 20px;
+        width: calc(100% - 70px);
+    }
+}

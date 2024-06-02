@@ -1,0 +1,194 @@
+#display td {
+    width: 70px;
+    height: 60px;
+    border-style: none;
+    padding-bottom: 10px;
+}
+#display {
+    margin: auto;
+    width: calc(60px * 5);
+}
+
+#display td > p {
+    transition: 1s;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    height: calc(100% - 5px);
+    aspect-ratio: 1/1;
+    background-color: var(--hex-text-dark);
+    border-radius: 20px;
+    color: var(--hex-text-darker);
+}
+
+#display .red {
+    background-color: var(--incorrect);
+    color: var(--hex-background-text-box);
+}
+
+#display .yellow {
+    background-color: var(--partially-correct);
+    color: var(--hex-background-text-box);
+}
+
+#display .green {
+    background-color: var(--correct);
+    color: var(--hex-background-text-box);
+}
+
+#keybord td{
+    width: fit-content;
+    border-style: none;
+    height: 100%;
+    width: calc(100% / 11);
+}
+#keybord2 td{
+    z-index: 1;
+    width: fit-content;
+    border-style: none;
+    height: 100%;
+    width: calc(100% / 10);
+}
+#keybord tr{
+    border-style: none;
+}
+
+#keybord td > p{
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--hex-background-text-box);
+    border-radius: 5px;
+    border-collapse: collapse;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--hex-text-dark);
+    color: var(--hex-text-darker);
+}
+
+#keybord p:hover, #keybord p.pressed{
+    transition: .5s;
+    background-color: var(--hex-text);
+    color: var(--hex-text-darker);
+}
+
+#keybord .out {
+    transition: .5s;
+    background-color: var(--out);
+    color: var(--hex-text);
+}
+
+#keybord .found {
+    transition: .5s;
+    background-color: var(--partially-correct);
+    color: var(--hex-text-darker);
+}
+#keybord .correct {
+    transition: .5s;
+    background-color: var(--correct);
+    color: var(--hex-text-darker);
+}
+
+#keybord .correct:hover, #keybord .correct.pressed{
+    background-color: var(--correct-hover);
+    color: var(--hex-text);
+}
+#keybord .found:hover, #keybord .found.pressed{
+    background-color: var(--partially-correct-hover);
+    color: var(--hex-text);
+}
+#keybord .out:hover, #keybord .out.pressed{
+    background-color: var(--out-hover);
+    color: var(--hex-text);
+}
+
+h2 {
+    text-align: center;
+}
+
+.stats-text {
+    text-align: center;
+}
+
+#stats-table {
+    width: 100%;
+}
+#stats{
+    width: calc(100%);
+    margin-left: -15px;
+    margin-top: -20px;
+    background-color: unset;
+    z-index: -1;
+}
+#keybord td > p{
+    aspect-ratio: 1/1;
+}
+
+@media (max-width: 560px) {
+    .stats-text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 540px) {
+    #keybord td{
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+@media (max-width: 390px) {
+    .stats-text {
+        font-size: 8px;
+    }
+}
+@media (min-width: 700px) {
+    #keybord td > p{
+        aspect-ratio: 2/1;
+    }
+}
+
+@media (min-width: 1000px) {
+    #keybord td > p{
+        aspect-ratio: 4/1;
+    }
+}
+
+#win{
+    margin-top: 0px;
+    text-align: center;
+    color: var(--correct);
+}
+
+#state-inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#state-input {
+    width: 160px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0px 10px;
+    background-color: var(--hex-text);
+    color: var(--hex-background-text-box);
+    border-radius: 10px;
+    text-align: center;
+    border-style: none;
+}
+#state-input-submit {
+    height: 30px;
+    font-size: 20px;
+}
+#state-input-submit > p {
+    color: var(--hex-background-text-box);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}

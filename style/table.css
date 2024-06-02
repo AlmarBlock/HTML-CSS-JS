@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    border-color: var(--hex-text-dark);
+    max-width: 20px; 
+    border-style: solid; 
+    text-align: center;
+}
+
+.table-light {
+    background-color: rgb(209, 209, 209);
+    color: black;
+}
+
+.table-dark {
+    background-color: rgb(44, 44, 44);
+    color: var(--hex-text);
+}
+
+.wikitable {
+    width: 100%;
+}
+
+.wikitable td {
+    width: calc(75% / 24);
+}
+
+.wikitable .table-text-description {
+    width: min-content;
+}
+
+@media (max-width: 430px) {
+    .wikitable td {
+       font-size: 10px;
+    }
+}

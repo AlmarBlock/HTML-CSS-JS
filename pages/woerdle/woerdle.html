@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/varibles.css">
+    <link rel="stylesheet" href="../../style/buttons.css">
+    <link rel="stylesheet" href="../../style/footer.css">
+    <link rel="stylesheet" href="../../style/logo.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" href="../../style/text.css">
+    <link rel="stylesheet" href="../../style/text-box.css">
+    <link rel="stylesheet" href="../../style/table.css">
+    <link rel="stylesheet" href="../../style/horizontal-split.css">
+    <link rel="stylesheet" href="./woerdle.css">
+    <title>Wördle</title>
+    <script defer src="../../scripts/autofill.js"></script>
+    <script defer src="../../scripts/button.js"></script>
+    <script defer src="../../scripts/footerLinkChanger.js"></script>
+    <script defer src="./woerdle.js"></script>
+</head>
+<body>
+    <logo></logo>
+    <h1>Wördle</h1>
+    <div class="text-box">
+        <table id="display">
+            <tbody>
+                <tr>
+                    <td><p id="1-1"></p></td>
+                    <td><p id="1-2"></p></td>
+                    <td><p id="1-3"></p></td>
+                    <td><p id="1-4"></p></td>
+                    <td><p id="1-5"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="2-1"></p></td>
+                    <td><p id="2-2"></p></td>
+                    <td><p id="2-3"></p></td>
+                    <td><p id="2-4"></p></td>
+                    <td><p id="2-5"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="3-1"></p></td>
+                    <td><p id="3-2"></p></td>
+                    <td><p id="3-3"></p></td>
+                    <td><p id="3-4"></p></td>
+                    <td><p id="3-5"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="4-1"></p></td>
+                    <td><p id="4-2"></p></td>
+                    <td><p id="4-3"></p></td>
+                    <td><p id="4-4"></p></td>
+                    <td><p id="4-5"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="5-1"></p></td>
+                    <td><p id="5-2"></p></td>
+                    <td><p id="5-3"></p></td>
+                    <td><p id="5-4"></p></td>
+                    <td><p id="5-5"></p></td>
+                </tr>
+                <tr>
+                    <td><p id="6-1"></p></td>
+                    <td><p id="6-2"></p></td>
+                    <td><p id="6-3"></p></td>
+                    <td><p id="6-4"></p></td>
+                    <td><p id="6-5"></p></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="keybord">
+            <table >
+                <tbody>
+                    <tr>
+                        <td><p id="Q" onclick="keybord(this.id)">Q</p></td>
+                        <td><p id="W" onclick="keybord(this.id)">W</p></td>
+                        <td><p id="E" onclick="keybord(this.id)">E</p></td>
+                        <td><p id="R" onclick="keybord(this.id)">R</p></td>
+                        <td><p id="T" onclick="keybord(this.id)">T</p></td>
+                        <td><p id="Z" onclick="keybord(this.id)">Z</p></td>
+                        <td><p id="U" onclick="keybord(this.id)">U</p></td>
+                        <td><p id="I" onclick="keybord(this.id)">I</p></td>
+                        <td><p id="O" onclick="keybord(this.id)">O</p></td>
+                        <td><p id="P" onclick="keybord(this.id)">P</p></td>
+                        <td><p id="Ü" onclick="keybord(this.id)">Ü</p></td>
+                    </tr>
+                    <tr>
+                        <td><p id="A" onclick="keybord(this.id)">A</p></td>
+                        <td><p id="S" onclick="keybord(this.id)">S</p></td>
+                        <td><p id="D" onclick="keybord(this.id)">D</p></td>
+                        <td><p id="F" onclick="keybord(this.id)">F</p></td>
+                        <td><p id="G" onclick="keybord(this.id)">G</p></td>
+                        <td><p id="H" onclick="keybord(this.id)">H</p></td>
+                        <td><p id="J" onclick="keybord(this.id)">J</p></td>
+                        <td><p id="K" onclick="keybord(this.id)">K</p></td>
+                        <td><p id="L" onclick="keybord(this.id)">L</p></td>
+                        <td><p id="Ö" onclick="keybord(this.id)">Ö</p></td>
+                        <td><p id="Ä" onclick="keybord(this.id)">Ä</p></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table id="keybord2">
+                <tbody>
+                    <tr>
+                        <td><p id="SEND" onclick="keybord(this.id)">SEND</p></td>
+                        <td><p id="Y" onclick="keybord(this.id)">Y</p></td>
+                        <td><p id="X" onclick="keybord(this.id)">X</p></td>
+                        <td><p id="C" onclick="keybord(this.id)">C</p></td>
+                        <td><p id="V" onclick="keybord(this.id)">V</p></td>
+                        <td><p id="B" onclick="keybord(this.id)">B</p></td>
+                        <td><p id="N" onclick="keybord(this.id)">N</p></td>
+                        <td><p id="M" onclick="keybord(this.id)">M</p></td>
+                        <td><p id="ẞ" onclick="keybord(this.id)">ß</p></td>
+                        <td><p id="BACK" onclick="keybord(this.id)">BACK</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="state-inputs">
+            <input id="state-input" type="text" maxlength="14" placeholder="Stat-Code">
+            <button id="state-input-submit" onclick="importStats()"><p>Submit</p></button>
+        </div>
+        <div class="text-box" id="stats" style="display: none;">
+            <h2>Stats</h2>
+            <table id="stats-table">
+                <tbody>
+                    <tr>
+                        <td class="stats-text" id="Played-Text">Gespielete Spiele</td>
+                        <td class="stats-text" id="Row-Text">Win-Streak</td>
+                        <td class="stats-text" id="Longest-Row-Text">Längeste Streak</td>
+                        <td class="stats-text" id="Correct-Text">Gelöste Tage</td>
+                    </tr>
+                    <tr>
+                        <td id="Played"></td>
+                        <td id="Row"></td>
+                        <td id="Longest-Row"></td>
+                        <td id="Correct"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="horizontal-split">
+        <div class="text-box fist">
+            <h2 style="margin: unset;">Wördle - Spielprinzip</h2>
+            <p>
+                Wordle ist ein browserbasiertes Rätsel, das täglich ein neues Wort veröffentlicht. 
+                Das gesuchte Wort besteht aus fünf Buchstaben und muss ähnlich wie in einem Kreuzworträtsel 
+                in quadratische, nebeneinander angeordnete Felder eingetragen werden. Für jedes Wort gibt 
+                es insgesamt sechs Versuche. Anders als beim Kreuzworträtsel gibt es jedoch keine 
+                inhaltlichen Hinweise auf das Lösungswort. Die Spielmechanik ist ähnlich der von Spielen 
+                wie Mastermind. Der Spieler trägt in der ersten Zeile ein beliebiges fünfbuchstabiges Wort 
+                ein, woraufhin die Buchstaben farbig unterlegt werden: Grauer Hintergrund steht für 
+                Buchstaben, die im gesuchten Wort nicht vorkommen; gelber Hintergrund steht für Buchstaben, 
+                die im Lösungswort an anderer Stelle vorkommen; grüner Hintergrund für Buchstaben, die im 
+                Lösungswort an derselben Stelle stehen. Nun hat der Spieler die Möglichkeit, sich dem 
+                Lösungswort in den fünf nachfolgenden Zeilen anzunähern. Ziel des Wortspieles ist, in 
+                möglichst wenigen Versuchen das gesuchte Wort zu finden.
+            </p>
+            <div class="qullen-container">
+                <a href="https://de.wikipedia.org/wiki/Wordle" target="_blank">[Wikipedia.org]</a>
+            </div>
+        </div>
+        <div class="text-box second">
+            <h2 style="margin: unset;">Wördle - Geschichte</h2>
+            <p>
+                Bereits in den 1980er-Jahren gab es in der Fernsehshow Lingo – in Deutschland umgearbeitet 
+                als 5 mal 5 – ein weitgehend gleiches Spielprinzip.
+
+                Josh Wardle, ein in New York City lebender Brite, entwickelte das Spiel zunächst für 
+                seine Lebensgefährtin und ließ es später auch weitere Familienmitglieder spielen; im 
+                Oktober 2021 veröffentlichte er es im Internet. Der Name des Spiels ist ein Wortspiel 
+                aus dem Nachnamen seines Erfinders Josh Wardle. Die Idee hatte Wardle laut eigener 
+                Aussage zusammen mit seiner Frau. Inspiriert durch ein ähnlich aufgebautes täglich 
+                erscheinendes Rätsel namens Spelling Bee der New York Times übernahm er das Prinzip für 
+                sein Browserspiel. Die Beschränkung auf ein Spiel pro Tag trägt durch künstliche Verknappung 
+                zur Attraktivität des Spiels bei. Das Spiel bestand ursprünglich aus etwa 12.000 Wörtern. 
+                Wardles Frau ging diese vor der Veröffentlichung durch und prüfte, ob sie die Wörter kannte 
+                oder nicht. Auf diese Weise wurde die Liste der Wordle-Wörter auf etwa 2500 eingegrenzt. 
+                Verärgert waren einige Spieler im englischsprachigen Raum beispielsweise über die Wörter 
+                Rebus und Tapir, weil sie ihnen nicht vertraut genug waren.
+            </p>
+            <div class="qullen-container">
+                <a href="https://de.wikipedia.org/wiki/Wordle" target="_blank">[Wikipedia.org]</a>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <buttons></buttons>
+        <footer></footer>
+    </div>
+</body>
+</html>

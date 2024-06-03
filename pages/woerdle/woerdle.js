@@ -20,6 +20,7 @@ fetch('data.json')
         todaysword = getWord(words);
 
         function init() {
+            importStatsFromCookie();
             for (let row = 1; row <= 6; row++) {
                 clearRow(row);
             }
@@ -122,7 +123,6 @@ function keybord(id) {
 }
 
 function checkWord() { 
-
     is_valid_word = false;
     for (let i = 0; i < words.length; i++) {
         if (words[i] === currentTryLetters.join("")) {
@@ -170,11 +170,13 @@ function checkWord() {
                 daysInRowLongest = addLetter(daysInRowLongest);
                 daysWon = addLetter(daysWon);
                 showStates(daysPlayed, daysInRow, daysWon, daysInRowLongest);
+                let value = DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString());
+                document.cookie = `score = ${value}; expires=Wen, 18 Dec 3000 12:00:00 UTC path=/;`;
                 DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString());
                 if (Number(daysPlayed) == 1) {
-                    document.getElementsByClassName("text-box")[0].innerHTML = `<h2 id="win">Richtig!</h2>` + document.getElementsByClassName("text-box")[0].innerHTML + `<p>Dein Stats Code ist: <b style="color: red;">` + DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString()) + `</b>, Mit diesem kannst du mit deinem alten Stats das nächste mal weiter spielen!</p>`;            
+                    document.getElementsByClassName("text-box")[0].innerHTML = `<h2 id="win">Richtig!</h2>` + document.getElementsByClassName("text-box")[0].innerHTML;            
                 } else { 
-                    document.getElementsByClassName("text-box")[0].innerHTML = `<h2 id="win">Richtig!</h2>` + document.getElementsByClassName("text-box")[0].innerHTML + `<p>Dein neuer Stats Code ist: <b style="color: red;">` + DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString()) + `</b>.</p>`;            
+                    document.getElementsByClassName("text-box")[0].innerHTML = `<h2 id="win">Richtig!</h2>` + document.getElementsByClassName("text-box")[0].innerHTML;            
                 }
             }
             if (stillPlaying) {
@@ -188,15 +190,17 @@ function checkWord() {
                 daysInRow = addLetter(daysInRow);
                 daysInRowLongest = addLetter(daysInRowLongest);
                 daysWon = addLetter(daysWon);
+                let value = DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString());
+                document.cookie = `score = ${value}; expires=Wen, 18 Dec 3000 12:00:00 UTC path=/;`;
                 DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString());
                 stillPlaying = false;
                 showStates(daysPlayed, daysInRow, daysWon, daysInRowLongest);
                 if (Number(daysPlayed) == 1) {
                     document.getElementsByClassName("text-box")[0].innerHTML = `<h2 stlye="margin-top: 0px; text-align: center;">Game Over</h2>
-                    <p style="padding-bottom: 20px; text-align: center;">Das gesuchte Wort war: <b style="color: red; padding-bottom:20px;">`+ todaysword.join("") + `</b></p>` + document.getElementsByClassName("text-box")[0].innerHTML + `<p>Dein Stat-Code ist: <b style="color: red; font-weight: bold;">` + DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString()) + `</b>, Mit diesem kannst du mit deinem alten Stats das nächste mal weiter spielen!</p>`;            
+                    <p style="padding-bottom: 20px; text-align: center;">Das gesuchte Wort war: <b style="color: red; padding-bottom:20px;">`+ todaysword.join("") + `</b></p>` + document.getElementsByClassName("text-box")[0].innerHTML;       
                 } else {
                     document.getElementsByClassName("text-box")[0].innerHTML = `<h2 stlye="margin-top: 0px; text-align: center;">Game Over</h2>
-                    <p style="padding-bottom: 20px; text-align: center;">Das gesuchte Wort war: <b style="color: red; padding-bottom:20px;">`+ todaysword.join("") + `</b></p>` + document.getElementsByClassName("text-box")[0].innerHTML + `<p>Dein neuer Stat-Code ist: <b style="color: red; font-weight: bold;">` + DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString()) + `</b>.</p>`;            
+                    <p style="padding-bottom: 20px; text-align: center;">Das gesuchte Wort war: <b style="color: red; padding-bottom:20px;">`+ todaysword.join("") + `</b></p>` + document.getElementsByClassName("text-box")[0].innerHTML;
                 }
             }
         }
@@ -225,7 +229,7 @@ function IsInputSelected() {
     }
 }
 
-function importStats(input) {
+function importStats() {
     inputNum = HexToDecimal(document.getElementById("state-input").value);
     let inputNumArray = [];
     for (let i = 0; i < inputNum.length; i+=4) {
@@ -253,6 +257,7 @@ function showStates(daysPlayed, daysInRow, daysWon, daysInRowLongest) {
     document.getElementById("Row").textContent = Number(daysInRow);
     document.getElementById("Longest-Row").textContent = Number(daysInRowLongest);
     document.getElementById("Correct").textContent = Number(daysWon);
+    document.getElementById("Export-Stats").style.display = "unset";
     document.getElementById("stats").style.display = "block";
 }
 
@@ -269,4 +274,37 @@ function HexToDecimal(x) {
         }
     }
     return num
+}
+
+function CopyToClipboard() {
+    var TextToCopy = DecimalToHex(daysPlayed.toString() + daysInRow.toString() + daysWon.toString() + daysInRowLongest.toString());
+    var copyText = document.getElementById("copy_input");
+    copyText.value = TextToCopy;
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    alert("Dein Score: " + copyText.value + " wurde in die Zwischenablage kopiert!");
+}
+
+function importStatsFromCookie() {
+    cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i+=1) {
+        if (cookies[i].slice(0, 6) == "score=") {
+            inputNum = HexToDecimal(cookies[i].slice(6));
+            let inputNumArray = [];
+            for (let i = 0; i < inputNum.length; i+=4) {
+                inputNumArray.push(inputNum.slice(i, i+4));
+            }
+            inputNumArray = inputNumArray.map(x => x.slice(1));
+            daysPlayed = inputNumArray[0];
+            daysInRow = inputNumArray[1];
+            daysWon = inputNumArray[2];
+            daysInRowLongest = inputNumArray[3];
+            document.getElementById("state-input").style.display = "none";
+            document.getElementById("state-input-submit").style.display = "none";
+            showStates(daysPlayed, daysInRow, daysWon, daysInRowLongest);
+            statsHaveBeenImported = true;
+        }
+    }
+    
 }

@@ -24,6 +24,7 @@
 </head>
 <body>
     <logo></logo>
+    <input id="copy_input" style="display: none;">
     <h1>Wördle</h1>
     <div class="text-box">
         <table id="display">
@@ -143,6 +144,7 @@
                 </tbody>
             </table>
         </div>
+        <button onclick="CopyToClipboard()" id="Export-Stats" style="display: none;">Stats Exportieren</button>
     </div>
     <div class="horizontal-split">
         <div class="text-box fist">
